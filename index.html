@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,9 +100,48 @@
                 padding: 2rem;
                 margin: 1rem;
             }
+
             h1 {
                 font-size: 2.5rem;
             }
+        }
+
+        /* Image Gallery Styling */
+        .image-gallery {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .image-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .gallery-img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-caption {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin: 0;
+            font-weight: 600;
         }
     </style>
     <!-- Importing Inter Font -->
@@ -109,11 +149,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <main class="container">
         <h1 id="greeting">Hola Mundo</h1>
         <p>Bienvenido a tu primer ejemplo web con estilo premium.</p>
+
+        <!-- Image Gallery Section -->
+        <div class="image-gallery">
+            <div class="image-card">
+                <img src="images/hero.png" alt="Futuristic Tech Illustration" class="gallery-img">
+                <p class="img-caption">Innovación Digital</p>
+            </div>
+            <div class="image-card">
+                <img src="images/background.png" alt="Sleek Background Pattern" class="gallery-img">
+                <p class="img-caption">Diseño Abstracto</p>
+            </div>
+        </div>
+
         <a href="#" class="btn" onclick="celebrate()">Click para celebrar</a>
     </main>
 
@@ -128,4 +182,5 @@
         }
     </script>
 </body>
+
 </html>
