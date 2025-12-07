@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo - Demo</title>
+    <meta name="description" content="Un ejemplo premium de Hola Mundo con HTML y CSS moderno.">
+    <style>
+        /* Modern CSS Reset & Variables */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --text-primary: #f8fafc;
+            --accent-color: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.5);
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Container styling with Glassmorphism */
+        .container {
+            text-align: center;
+            padding: 4rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: floatUp 0.8s ease-out forwards;
+        }
+
+        /* Typography & Animations */
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Interactive Element */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 1px solid var(--accent-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            color: #0f172a;
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Keyframe Animations */
+        @keyframes floatUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    <!-- Importing Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <h1 id="greeting">Hola Mundo</h1>
+        <p>Bienvenido a tu primer ejemplo web con estilo premium.</p>
+        <a href="#" class="btn" onclick="celebrate()">Click para celebrar</a>
+    </main>
+
+    <script>
+        function celebrate() {
+            const h1 = document.getElementById('greeting');
+            h1.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                h1.style.transform = 'scale(1)';
+            }, 200);
+            alert('¡Hola! Has interactuado con la página.');
+        }
+    </script>
+</body>
+</html>
