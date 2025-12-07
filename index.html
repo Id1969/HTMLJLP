@@ -7,7 +7,11 @@
     <title>Hola Mundo - Demo</title>
     <meta name="description" content="Un ejemplo premium de Hola Mundo con HTML y CSS moderno.">
     <style>
-        /* Modern CSS Reset & Variables */
+        /* Modern CSS Reset & Variables 
+           Aquí definimos los colores y fuentes que usaremos en toda la web.
+           --bg-gradient: El color de fondo degradado.
+           --accent-color: El color azul brillante para destacar elementos.
+        */
         :root {
             --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             --text-primary: #f8fafc;
@@ -33,11 +37,15 @@
             overflow: hidden;
         }
 
-        /* Container styling with Glassmorphism */
+        /* Container styling with Glassmorphism 
+           Esta clase crea el efecto de "tarjeta de cristal" central.
+           backdrop-filter: blur(10px); -> Hace el efecto borroso de fondo.
+        */
         .container {
             text-align: center;
             padding: 4rem;
             background: rgba(255, 255, 255, 0.05);
+            /* Fondo semitransparente */
             backdrop-filter: blur(10px);
             border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -45,6 +53,7 @@
             transform: translateY(20px);
             opacity: 0;
             animation: floatUp 0.8s ease-out forwards;
+            /* Animación de entrada */
         }
 
         /* Typography & Animations */
@@ -83,7 +92,9 @@
             background: var(--accent-color);
             color: #0f172a;
             box-shadow: 0 0 20px var(--accent-glow);
+            /* Efecto de resplandor */
             transform: translateY(-2px);
+            /* Pequeño salto hacia arriba */
         }
 
         /* Keyframe Animations */
@@ -156,12 +167,25 @@
         <h1 id="greeting">Hola Mundo</h1>
         <p>Bienvenido a tu primer ejemplo web con estilo premium.</p>
 
-        <!-- Image Gallery Section -->
+        <!-- 
+            SECCIÓN DE GALERÍA DE IMÁGENES 
+            Aquí es donde se muestran las imágenes que hemos guardado.
+        -->
         <div class="image-gallery">
+            <!-- 
+                Tarjeta de Imagen 1 
+                La imagen se carga desde la carpeta 'images' y el archivo 'hero.png'
+                src="images/hero.png" -> Ruta relativa a la imagen
+            -->
             <div class="image-card">
                 <img src="images/hero.png" alt="Futuristic Tech Illustration" class="gallery-img">
                 <p class="img-caption">Innovación Digital</p>
             </div>
+
+            <!-- 
+                Tarjeta de Imagen 2
+                La imagen se carga desde la carpeta 'images' y el archivo 'background.png'
+            -->
             <div class="image-card">
                 <img src="images/background.png" alt="Sleek Background Pattern" class="gallery-img">
                 <p class="img-caption">Diseño Abstracto</p>
@@ -172,12 +196,20 @@
     </main>
 
     <script>
+        // Función Javascript para la animación del título al hacer click
         function celebrate() {
+            // Buscamos el título h1 por su ID
             const h1 = document.getElementById('greeting');
+
+            // Aumentamos su tamaño (scale)
             h1.style.transform = 'scale(1.1)';
+
+            // Esperamos 200 milisegundos y lo devolvemos a su tamaño normal
             setTimeout(() => {
                 h1.style.transform = 'scale(1)';
             }, 200);
+
+            // Mostramos un mensaje de alerta
             alert('¡Hola! Has interactuado con la página.');
         }
     </script>
